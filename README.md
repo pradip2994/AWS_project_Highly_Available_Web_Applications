@@ -1,6 +1,7 @@
 # Deployment of a Highly Scalable and Available Web Applications on AWS
 
-![website drawio](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications/assets/124191442/f6e890a9-87b9-49f7-8e71-a475ff2bc6db)
+![pkv drawio](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/013d7e63-f2db-48b2-98d7-7a643bf3941d)
+
 
 ## Step-by-Step Guide to Deploy web Application
 
