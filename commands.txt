@@ -1,0 +1,139 @@
+
+## Install MySql Client.
+
+sudo su
+
+apt-get update
+
+apt-get install mysql-client -y
+
+## Install apache webserver.
+
+apt-get install apache2 -y
+
+systemctl status apache2
+
+
+## Install PHP and related packages 
+
+apt-get install php libapache2-mod-php php-mysql -y
+
+-----------------------------------------------------------------
+
+## Install nfs client
+
+sudo apt-get update
+
+### Install git and binutils, using the following command. binutils is required for building DEB packages,
+
+sudo apt-get -y install git binutils
+
+
+### Clone amazon-efs-utils from GitHub using the following command.
+
+git clone https://github.com/aws/efs-utils
+
+
+### Navigate to the directory that contains the amazon-efs-utils package.
+
+cd efs-utils
+
+
+### Build amazon-efs-utils using the following command:
+
+./build-deb.sh
+
+
+### Install the package with the following command.
+
+sudo apt-get -y install ./build/amazon-efs-utils*deb
+
+
+### Run the following commands to install wget.
+
+sudo apt-get update
+sudo apt-get -y install wget
+
+### Use the following script to install the appropriate version of the pip package manager.
+
+if echo $(python3 -V 2>&1) | grep -e "Python 3.6"; then
+    sudo wget https://bootstrap.pypa.io/pip/3.6/get-pip.py -O /tmp/get-pip.py
+elif echo $(python3 -V 2>&1) | grep -e "Python 3.5"; then
+    sudo wget https://bootstrap.pypa.io/pip/3.5/get-pip.py -O /tmp/get-pip.py
+elif echo $(python3 -V 2>&1) | grep -e "Python 3.4"; then
+    sudo wget https://bootstrap.pypa.io/pip/3.4/get-pip.py -O /tmp/get-pip.py
+else
+    sudo apt-get -y install python3-distutils
+    sudo wget https://bootstrap.pypa.io/get-pip.py -O /tmp/get-pip.py
+fi
+
+### Run the following commands to install botocore.
+
+sudo python3 /tmp/get-pip.py
+sudo pip3 install botocore
+
+cd ..
+
+ls
+
+### Mount EFS using: mount via IP.
+
+Example:
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.0.0.186:/ /var/www/html
+
+df -h
+
+### Go to /etc/fstab and update endpoint of efs 
+
+nano /etc/fstab
+10.0.0.186:/ /var/www/html nfs4 defaults 0 0
+
+reboot
+## Reboot system and check mounted efs is showing or not.
+df -h
+
+
+## Connect Rds with mysql client
+
+mysql -h <database-endpoint> -u <user-name> -p
+
+### Create Database
+
+CREATE DATABASE wordpress;
+CREATE USER 'wordpress' IDENTIFIED BY 'wordpress-pass';
+GRANT ALL PRIVILEGES ON wordpress.* TO wordpress;
+FLUSH PRIVILEGES;
+Exit
+
+## Download the latest WordPress File
+
+wget https://wordpress.org/latest.tar.gz
+
+### Uncompress the tarball which will generate a folder called “wordpress” 
+
+tar -xvf latest.tar.gz
+
+ls
+cd wordpress/
+ls
+cp wp-config-sample.php wp-config.php
+
+### Now Enter database name, username, password, host and configure Authentication Unique Keys and Salts.
+
+nano wp-config.php
+
+Goto this website and copy and paste here. https://api.wordpress.org/secret-key/1.1/salt/
+
+cd ..
+ls
+
+### Copy wordpress content to destination.
+
+sudo cp -r wordpress/* /var/www/html/
+
+### Restart apache webserver.
+
+systemctl restart apache2
+
+Now stop the instance and create AMI
+
