@@ -393,16 +393,46 @@ systemctl restart apache2
 
 ## Now entering the Domain name in Browser, you can see wordpress website
 
-![Screenshot 2023-09-25 181309](https://github.com/pradip2994/web/assets/124191442/ea58b5fe-95bc-4aab-a9c5-40d20ce172e4)
+![Screenshot 2023-09-25 181309](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/19be2ff2-67eb-4344-a82d-37aaf1d83463)
 
 ## Enter your details and login.
 
-![Screenshot 2023-09-25 181429](https://github.com/pradip2994/web/assets/124191442/bec6c549-0931-46fa-810e-4ae63f8a3ed5)
-![Screenshot 2023-09-25 181441](https://github.com/pradip2994/web/assets/124191442/e7c73acf-9d21-4beb-8e87-4744874bfdd2)
+![Screenshot 2023-09-25 181429](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/a167a7d5-0252-4b74-a634-923ee91a4ab7)
+![Screenshot 2023-09-25 181441](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/a273e3ef-3a93-4c96-8419-f18a07edddc8)
 
 ### Now you can see welcome to WordPress by entering Domain name. 
 
-![Screenshot 2023-09-25 181650](https://github.com/pradip2994/web/assets/124191442/a6f25f21-cefc-4d79-980c-5b4da57a2b2a)
+![Screenshot 2023-09-25 181650](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/5fedaebc-f394-4f4c-891a-d9fc5c323782)
+
+## Register SSL Certificate in AWS Certificate Manager for secure connection. 
+
+![Screenshot 2023-09-25 190105](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/b848df3d-dc5c-44d1-a25a-00bfcc3dd66f)
+
+![Screenshot 2023-09-25 190111](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/ec2d17ba-0b81-44f6-88b0-f7f01e22ea2a)
+
+![Screenshot 2023-09-25 190210](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/2d6310a3-0790-439c-b304-e38a757391ad)
+
+![Screenshot 2023-09-25 190310](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/136836ab-7a41-4fe5-bbce-66d7942e064d)
+
+## Now go to Loadbalancer and Add Listener
+
+![Screenshot 2023-09-25 190430](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/0f4f27a5-0141-4d42-aadb-ed7e6c32ff79)
+
+![Screenshot 2023-09-25 190453](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/4d13b153-c3d2-4389-91b8-c804d2abd463)
+
+![Screenshot 2023-09-25 190503](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/8d62909b-879f-4040-b5f3-36ce53751d0c)
+
+![Screenshot 2023-09-25 190527](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/38c317eb-732f-46b7-98c8-7aba06d3640e)
+
+### Also Edit Http:80 Rule
+
+![Screenshot 2023-09-25 190931](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/1315be8a-c1a7-4f6e-ac87-21aa4e064658)
+
+![Screenshot 2023-09-25 191051](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/f9973090-605a-4ff4-940e-c6be2c501020)
+
+# Now access domain name in browser, you can see it is securely connected with https  
+
+![Screenshot 2023-09-25 191709](https://github.com/pradip2994/AWS_project_Highly_Available_Web_Applications./assets/124191442/4f68daf4-69c7-4e51-a215-3f836f64fb27)
 
 
 
